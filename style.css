@@ -1,10 +1,106 @@
+html {
+    background-color: rgb(242, 230, 250);
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .display {
     font-family: 'Varela Round', sans-serif;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    background-color: rgb(157, 142, 250);
+    margin: 10px 10px 5px;
+    padding: 5px 5px 5px;
+    border-radius: 12px;
+    text-align: end;
+    border-style: dashed;
+    border-width: 2px;
 }
+
 .buttons {
     font-family: 'Kanit', sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 8px 0px;
+}
+
+.calculator {
+    margin-top: 100px;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-rows: 2fr 5fr;
+    width: 380px;
+    background-color: rgb(44, 61, 61);
+    border-radius: 10px;
+    height: 450px;
+    border-width: 3px;
+    border-style: solid;
+}
+
+button {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    margin: auto;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: #000000 solid 1px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 3px rgb(0, 0, 0);
+}
+
+button:hover {
+    background-color: #7c7c7c;
+    color: white;
+}
+
+button:active {
+    color: white;
+    background-color: #7c7c7c;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.303);
+    transform: translate(1px, 1px);
+}
+
+.equal {
+    background-color: rgb(250, 246, 115);
+}
+
+.equal:hover {
+    background-color: rgb(162, 159, 76);
+}
+
+equal:active {
+    background-color: rgb(162, 159, 76);
+}
+
+.clear {
+    background-color: red;
+}
+
+.clear:hover {
+    background-color: tomato;
+}
+
+.clear:active {
+    background-color: tomato;
+}
+
+a {
+    color: lightgreen;
+}
+
+a:hover {
+    color: rgb(58, 201, 29);
+}
+
+a:visited {
+    color: lightgreen;
 }
