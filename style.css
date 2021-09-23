@@ -1,0 +1,10 @@
+.display {
+    font-family: 'Varela Round', sans-serif;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.buttons {
+    font-family: 'Kanit', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
