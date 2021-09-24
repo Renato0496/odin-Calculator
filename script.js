@@ -91,7 +91,7 @@ let writeNumber = function () {
 
 let clearAll = function () {
     current.innerHTML = '';
-    accumul;ate.innerHTML = '';
+    accumulate.innerHTML = '';
 };
 
 let endCalculus = function () {
