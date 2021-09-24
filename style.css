@@ -12,14 +12,19 @@ body {
     display: grid;
     grid-template-rows: 1fr 1fr;
     background-color: rgb(157, 142, 250);
-    margin: 10px 10px 5px;
+    margin: 10px 10px 0px;
     padding: 5px 5px 5px;
     border-radius: 12px;
     text-align: end;
     border-style: dashed;
     border-width: 2px;
 }
-
+#topDisplay {
+    font-size: 27px;
+}
+#botDisplay {
+    font-size: 43px;
+}
 .buttons {
     font-family: 'Kanit', sans-serif;
     display: grid;
@@ -77,19 +82,19 @@ button:active {
     background-color: rgb(162, 159, 76);
 }
 
-equal:active {
+.equal:active {
     background-color: rgb(162, 159, 76);
 }
 
-.clear {
+.ac {
     background-color: red;
 }
 
-.clear:hover {
+.ac:hover {
     background-color: tomato;
 }
 
-.clear:active {
+.ac:active {
     background-color: tomato;
 }
 
@@ -97,8 +102,8 @@ a {
     color: lightgreen;
 }
 
-a:hover {
-    color: rgb(58, 201, 29);
+.githubReference:hover {
+    color: rgb(201, 98, 29);
 }
 
 a:visited {
