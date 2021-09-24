@@ -2,11 +2,6 @@ html {
     background-color: rgb(242, 230, 250);
 }
 
-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
 .display {
     font-family: 'Varela Round', sans-serif;
     display: grid;
@@ -20,10 +15,10 @@ body {
     border-width: 2px;
 }
 #topDisplay {
-    font-size: 27px;
+    font-size: 27.5px;
 }
 #botDisplay {
-    font-size: 43px;
+    font-size: 27.5px;
 }
 .buttons {
     font-family: 'Kanit', sans-serif;
@@ -33,7 +28,7 @@ body {
 }
 
 .calculator {
-    margin-top: 100px;
+    margin: 100px auto 0px;
     grid-column: 2/3;
     display: grid;
     grid-template-rows: 2fr 5fr;
@@ -74,6 +69,18 @@ button:active {
     transform: translate(1px, 1px);
 }
 
+.operands {
+    background-color: rgb(138, 162, 221);
+}
+
+.operands:hover {
+    background-color: rgb(104, 156, 233);
+}
+
+.operands:active {
+    background-color: rgb(104, 156, 233);
+}
+
 .equal {
     background-color: rgb(250, 246, 115);
 }
@@ -108,4 +115,10 @@ a {
 
 a:visited {
     color: lightgreen;
+}
+footer {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+
 }
