@@ -9,9 +9,9 @@ let accumulate = document.querySelector('#topDisplay');
 let add = (a, b) => a += b;
 let subtract = (a, b) => a -= b;
 let multiply = (a, b) => a *= b;
-let divide = function(a, b) {
+let divide = function (a, b) {
     if (a !== 0) {
-       return a = (a / b);
+        return a = (a / b);
     } else {
         alert('OK, THAT\'S NOT FUN');
     }
@@ -38,28 +38,28 @@ let useOperand = function () {
         let second = Number(current.textContent);
         if (signToUse === '+') {
             let theNewerAccu = operate(add, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
             accumulate.innerHTML = `${theNewerAccu} ${sign}`;
         } else if (signToUse === '-') {
             let theNewerAccu = operate(subtract, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
             accumulate.innerHTML = `${theNewerAccu} ${sign}`;
         } else if (signToUse === 'x') {
             let theNewerAccu = operate(multiply, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
             accumulate.innerHTML = `${theNewerAccu} ${sign}`;
         } else if (signToUse === '÷') {
             let theNewerAccu = operate(divide, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
@@ -72,8 +72,10 @@ let useOperand = function () {
     }
 };
 
-let writeNumber = function () {
-    if (current.textContent.length===20) {
+let writeNumber = function () {   
+    document.getElementsByClassName('display')[0].style.gridTemplateRows = '1fr 1fr';
+    accumulate.style.fontSize = '27.5px';
+    if (current.textContent.length === 20) {
         alert('max 20 digits!');
         return
     }
@@ -101,44 +103,46 @@ let endCalculus = function () {
         let second = Number(current.textContent);
         if (signToUse === '+') {
             let theNewerAccu = operate(add, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
             accumulate.innerHTML = `${theNewerAccu}`;
         } else if (signToUse === '-') {
             let theNewerAccu = operate(subtract, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
             accumulate.innerHTML = `${theNewerAccu}`;
         } else if (signToUse === 'x') {
             let theNewerAccu = operate(multiply, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
             accumulate.innerHTML = `${theNewerAccu}`;
         } else if (signToUse === '÷') {
             let theNewerAccu = operate(divide, first, second);
-            if (theNewerAccu.toString().length >= 20){
+            if (theNewerAccu.toString().length >= 20) {
                 alert('max 20 digits!');
                 return;
             };
             accumulate.innerHTML = `${theNewerAccu}`;
         };
         current.innerHTML = '';
-    } else if (!current.textContent || !accumulate.textContent) {
+        document.getElementsByClassName('display')[0].style.gridTemplateRows = '2fr 1fr';
+        accumulate.style.fontSize = '65px';
+    } else {
         return
     };
 };
 
 //event listeners
-operands.forEach(oper => oper.addEventListener('click',useOperand));
+operands.forEach(oper => oper.addEventListener('click', useOperand));
 
 numbers.forEach(oper => oper.addEventListener('click', writeNumber));
 
 ac.addEventListener('click', clearAll);
 
-equal.addEventListener('click',endCalculus);
+equal.addEventListener('click', endCalculus);
