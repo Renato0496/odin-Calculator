@@ -2,6 +2,7 @@ let numbers = document.querySelectorAll('.numbers');
 let operands = document.querySelectorAll('.operands');
 let ac = document.querySelector('.ac');
 let equal = document.querySelector('.equal');
+let eraseNum = document.querySelector('.eraseNumber'); 
 let current = document.querySelector('#botDisplay');
 let accumulate = document.querySelector('#topDisplay');
 
@@ -73,8 +74,7 @@ let useOperand = function () {
 };
 
 let writeNumber = function () {   
-    document.getElementsByClassName('display')[0].style.gridTemplateRows = '1fr 1fr';
-    accumulate.style.fontSize = '27.5px';
+    accumulate.style.fontWeight = 'normal';
     if (current.textContent.length === 20) {
         alert('max 20 digits!');
         return
@@ -88,7 +88,8 @@ let writeNumber = function () {
         intermediate.push(this.value);
         let anotherOne = intermediate.join('');
         current.innerHTML = anotherOne;
-    }
+    };
+    current.style.fontWeight = '600px';
 };
 
 let clearAll = function () {
@@ -131,12 +132,19 @@ let endCalculus = function () {
             accumulate.innerHTML = `${theNewerAccu}`;
         };
         current.innerHTML = '';
-        document.getElementsByClassName('display')[0].style.gridTemplateRows = '2fr 1fr';
-        accumulate.style.fontSize = '65px';
+        accumulate.style.fontWeight = 'bold';
     } else {
         return
     };
 };
+
+let eraseLast = function() {
+    if (!current.textContent){
+        return
+    };
+    let newCurr = current.textContent.slice(0,-1);
+    current.innerHTML = newCurr;
+}
 
 //event listeners
 operands.forEach(oper => oper.addEventListener('click', useOperand));
@@ -146,3 +154,5 @@ numbers.forEach(oper => oper.addEventListener('click', writeNumber));
 ac.addEventListener('click', clearAll);
 
 equal.addEventListener('click', endCalculus);
+
+eraseNum.addEventListener('click', eraseLast);

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script src="script.js" defer></script>
     <meta value="viewport" content="width=device-width, initial-scale=1.0">
     <title>'THE' Calculator</title>
@@ -20,25 +21,33 @@
             <div class="littleDisplay" id="botDisplay"></div>
         </div>
         <div class="buttons">
-            <button value="1" type="button" class="numbers">1</button>
-            <button value="2" type="button" class="numbers">2</button>
-            <button value="3" type="button" class="numbers">3</button>
-            <button type="button" class="operands" value="divide">÷</button>
-            <button value="4" type="button" class="numbers">4</button>
-            <button value="5" type="button" class="numbers">5</button>
-            <button value="6" type="button" class="numbers">6</button>
-            <button type="button" class="operands" value="multiply">x</button>
-            <button value="7" type="button" class="numbers">7</button>
-            <button value="8" type="button" class="numbers">8</button>
-            <button value="9" type="button" class="numbers">9</button>
-            <button type="button" class="operands" value="subtract">-</button>
-            <button type="button" class="ac">C</button>
-            <button value="0" type="button" class="numbers">0</button>
-            <button type="button" class="operands" value="add">+</button>
-            <button type="button" class="equal">=</button>
+            <div class="numbersAcEqual">
+                <button value="1" type="button" class="numbers">1</button>
+                <button value="2" type="button" class="numbers">2</button>
+                <button value="3" type="button" class="numbers">3</button>
+                <button value="4" type="button" class="numbers">4</button>
+                <button value="5" type="button" class="numbers">5</button>
+                <button value="6" type="button" class="numbers">6</button>
+                <button value="7" type="button" class="numbers">7</button>
+                <button value="8" type="button" class="numbers">8</button>
+                <button value="9" type="button" class="numbers">9</button>
+                <button type="button" class="ac">C</button>
+                <button value="0" type="button" class="numbers">0</button>
+                <button type="button" class="equal thirdCol lastRow">=</button>
+            </div>
+            <div class="operandsErase">
+                <button type="button" class="eraseNumber"><span class="material-icons-outlined">
+                    backspace
+                    </span></button>
+                <button type="button" class="operands" value="divide">÷</button>
+                <button type="button" class="operands" value="multiply">x</button>
+                <button type="button" class="operands" value="subtract">-</button>
+                <button type="button" class="operands" value="add">+</button>
+            </div>
         </div>
     </div>
-    <footer>Made by <a href="https://github.com/Renato0496" target="_blank" class="githubReference">Renato Alvarado</a></footer>
+    <footer>Made by <a href="https://github.com/Renato0496" target="_blank" class="githubReference">Renato Alvarado</a>
+    </footer>
 </body>
 
 </html>
