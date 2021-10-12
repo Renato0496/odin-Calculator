@@ -22,7 +22,7 @@ let operate = function (operator, a, b) {
     if (result.toString() === result.toFixed().toString()) {
         return result;
     } else {
-        return result.toFixed(2);
+        return result.toFixed(7));
     }
 };
 
