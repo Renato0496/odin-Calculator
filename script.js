@@ -24,7 +24,7 @@ let operate = function (operator, a, b) {
     } else {
         let imTired = result.toString().length;
         if (imTired>=20) {
-            result.toString().splice(0,19);
+            result.toString().splice(0,20);
         }
         return Number(result);
     }
