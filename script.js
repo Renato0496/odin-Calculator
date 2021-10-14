@@ -22,7 +22,11 @@ let operate = function (operator, a, b) {
     if (result.toString() === result.toFixed().toString()) {
         return result;
     } else {
-        return result.toFixed(7));
+        let imTired = result.toString().length;
+        if (imTired>=20) {
+            result.toString().splice(0,19);
+        }
+        return Number(result);
     }
 };
 
