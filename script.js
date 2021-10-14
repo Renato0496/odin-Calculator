@@ -1,8 +1,9 @@
 let numbers = document.querySelectorAll('.numbers');
 let operands = document.querySelectorAll('.operands');
 let ac = document.querySelector('.ac');
+let dot = document.querySelector('.dot');
 let equal = document.querySelector('.equal');
-let eraseNum = document.querySelector('.eraseNumber'); 
+let eraseNum = document.querySelector('.eraseNumber');
 let current = document.querySelector('#botDisplay');
 let accumulate = document.querySelector('#topDisplay');
 
@@ -23,8 +24,8 @@ let operate = function (operator, a, b) {
         return result;
     } else {
         let imTired = result.toString().length;
-        if (imTired>=20) {
-            result.toString().splice(0,20);
+        if (imTired >= 20) {
+            result.toString().splice(0, 20);
         }
         return Number(result);
     }
@@ -77,7 +78,25 @@ let useOperand = function () {
     }
 };
 
-let writeNumber = function () {   
+let useOfdOT = function() {
+    accumulate.style.fontWeight = 'normal';
+    if (current.textContent.length === 20) {
+        alert('max 20 digits!');
+        return
+    }
+    if (!current.textContent) {
+        return
+    } else if (current.textContent) {
+        if (current.textContent.includes('.')){return};
+        let intermediate = current.textContent.split('');
+        intermediate.push(this.value);
+        let anotherOne = intermediate.join('');
+        current.innerHTML = anotherOne;
+    };
+    current.style.fontWeight = '600px';
+}
+
+let writeNumber = function () {
     accumulate.style.fontWeight = 'normal';
     if (current.textContent.length === 20) {
         alert('max 20 digits!');
@@ -142,11 +161,11 @@ let endCalculus = function () {
     };
 };
 
-let eraseLast = function() {
-    if (!current.textContent){
+let eraseLast = function () {
+    if (!current.textContent) {
         return
     };
-    let newCurr = current.textContent.slice(0,-1);
+    let newCurr = current.textContent.slice(0, -1);
     current.innerHTML = newCurr;
 }
 
@@ -154,6 +173,8 @@ let eraseLast = function() {
 operands.forEach(oper => oper.addEventListener('click', useOperand));
 
 numbers.forEach(oper => oper.addEventListener('click', writeNumber));
+
+dot.addEventListener('click',useOfdOT);
 
 ac.addEventListener('click', clearAll);
 
